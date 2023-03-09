@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<carte>
+    <plats>
+        <plat>
+            <categorie>poisson</categorie>
+            <type>sole</type>
+            <prix>15.00</prix>
+            <description>au feu de bois</description>
+        </plat>
+        <plat>
+            <categorie>viande</categorie>
+            <type>boeuf</type>
+            <prix>15.00</prix>
+            <description>au grill</description>
+        </plat>
+        <plat>
+            <categorie>viande</categorie>
+            <type>steack</type>
+            <prix>15.00</prix>
+            <description>au grill</description>
+        </plat>
+        <plat>
+            <categorie>volaille</categorie>
+            <type>dinde</type>
+            <prix>15.00</prix>
+            <description>de Noel farcie</description>
+        </plat>
+    </plats>
+    <accompagnements>
+        <accompagnement>
+            <categorie>pates</categorie>
+            <type>spaghetti</type>
+            <prix>5.00</prix>
+            <description>aldente</description>
+        </accompagnement>
+        <accompagnement>
+            <categorie>riz</categorie>
+            <type>riz basmati</type>
+            <prix>5.00</prix>
+            <description>à la japonaise</description>
+        </accompagnement>
+        <accompagnement>
+            <categorie>pommes de terre</categorie>
+            <type>pommes de terre Nicolas</type>
+            <prix>5.00</prix>
+            <description>en chemise au four</description>
+        </accompagnement>
+        <accompagnement>
+            <categorie>frites</categorie>
+            <type>frites large</type>
+            <prix>5.00</prix>
+            <description>faites maison</description>
+        </accompagnement>
+    </accompagnements>
+    <desserts>
+        <dessert>
+            <categorie>cafe</categorie>
+            <type>cafe latte</type>
+            <prix>5.00</prix>
+            <description>avec des gourmandises</description>
+        </dessert>
+        <dessert>
+            <categorie>fruit</categorie>
+            <type>pomme</type>
+            <prix>5.00</prix>
+            <description>pomme sucrée</description>
+        </dessert>
+        <dessert>
+            <categorie>glace</categorie>
+            <type>glace vanille</type>
+            <prix>5.00</prix>
+            <description>enrobé de chocolat</description>
+        </dessert>
+        <dessert>
+            <categorie>patisserie</categorie>
+            <type>eclair</type>
+            <prix>5.00</prix>
+            <description>eclair fondant chocolat</description>
+        </dessert>
+    </desserts>
+</carte>
