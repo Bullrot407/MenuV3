@@ -13,8 +13,9 @@ public class Fruit extends PlatDecorator {
         super(platDecore);
     }
 
+
     public String getPreparation() {
-        return platDecore.getPreparation() + " " + this.getType() + " " + this.getDescription();
+        return platDecore.getPreparation() + " " + this.getType() + " " + this.getDescription() + " " + getPrix() + "\n";
     }
 
     @Override
@@ -34,7 +35,7 @@ public class Fruit extends PlatDecorator {
 
     @Override
     public Double getPrix() {
-        return platDecore.getPrix() + this.prix;
+        return this.prix;
     }
 
     @Override
@@ -46,5 +47,8 @@ public class Fruit extends PlatDecorator {
     public void setType(String type) {
         this.type = type;
     }
-}
 
+    public Double getAddition() {
+        return platDecore.getAddition() + this.prix;
+    }
+}

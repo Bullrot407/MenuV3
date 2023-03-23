@@ -13,4 +13,8 @@ String getPreparation();
     String getType();
 
     void setType(String type);
+
+     Double getAddition();
+
+
 }

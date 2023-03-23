@@ -12,8 +12,9 @@ public class Riz extends PlatDecorator {
     public Riz(Plat platDecore) {
         super(platDecore);
     }
+
     public String getPreparation() {
-        return platDecore.getPreparation() + " " + this.getType() + " " + this.getDescription();
+        return platDecore.getPreparation() + " " + this.getType() + " " + this.getDescription() + " " + getPrix() +"\n";
     }
 
     @Override
@@ -33,7 +34,7 @@ public class Riz extends PlatDecorator {
 
     @Override
     public Double getPrix() {
-        return platDecore.getPrix() + this.prix;
+        return this.prix;
     }
 
     @Override
@@ -44,6 +45,10 @@ public class Riz extends PlatDecorator {
     @Override
     public void setType(String type) {
         this.type = type;
+    }
+
+    public Double getAddition() {
+        return platDecore.getPrix() + this.prix;
     }
 }
 

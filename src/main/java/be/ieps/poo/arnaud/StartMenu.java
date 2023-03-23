@@ -2,6 +2,8 @@ package be.ieps.poo.arnaud;
 
 import be.ieps.poo.arnaud.controller.MenuController;
 
+import java.sql.SQLException;
+
 
 public class StartMenu {
 

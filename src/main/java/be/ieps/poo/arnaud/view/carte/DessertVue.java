@@ -53,7 +53,7 @@ public class DessertVue extends JPanel {
                     if (result == JOptionPane.YES_OPTION) {
                         commandeModal.effaceConsole();
                         menuController.ajoutMenuCommande();
-                        commandeModal.menuCommandeTotal(menuController.getTable());
+                        commandeModal.afficheCommande(menuController.getTable());
                         commandeModal.setSelectedIndex(0);
                     } else {
                         commandeModal.effaceConsole();

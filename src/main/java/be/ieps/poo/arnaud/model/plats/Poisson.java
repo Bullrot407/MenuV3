@@ -37,7 +37,7 @@ public class Poisson implements Plat {
     }
 
     public String getPreparation() {
-        return getType() + " " + getDescription();
+        return getType() + " " + getDescription() + " " + getPrix() +"\n";
     }
 
     @Override
@@ -68,6 +68,11 @@ public class Poisson implements Plat {
     @Override
     public void setType(String type) {
         this.type = type;
+    }
+
+    @Override
+    public Double getAddition() {
+        return null;
     }
 
     @Override

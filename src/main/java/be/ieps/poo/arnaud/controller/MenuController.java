@@ -1,23 +1,22 @@
 package be.ieps.poo.arnaud.controller;
 
 import be.ieps.poo.arnaud.model.carte.Carte;
-import be.ieps.poo.arnaud.model.carte.Commande;
 import be.ieps.poo.arnaud.model.carte.loader.LoadingException;
 import be.ieps.poo.arnaud.model.carte.loader.XMLLoader;
+import be.ieps.poo.arnaud.model.Commande;
+import be.ieps.poo.arnaud.dao.CommandeDAO;
 import be.ieps.poo.arnaud.model.factory.PlatFactory;
 import be.ieps.poo.arnaud.model.plats.Plat;
 import be.ieps.poo.arnaud.view.FenetrePrincipale;
 
-
-import java.io.File;
-import java.net.URISyntaxException;
-import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
 
 
 public class MenuController {
     private Carte carte;
     private XMLLoader xmlLoader = new XMLLoader();
-    private Commande commande = new Commande();
+    private CommandeAction commandeAction = new CommandeAction();
     private Plat plat;
     private String prixTotal, menuCommandeTotal, menu, table;
 
@@ -56,12 +55,12 @@ public class MenuController {
         fenetrePrincipale.setVisible(true);
     }
 
-    public Commande getCommande() {
-        return commande;
+    public CommandeAction getCommandeAction() {
+        return commandeAction;
     }
 
-    public void setCommande(Commande commande) {
-        this.commande = commande;
+    public void setCommandeAction(CommandeAction commandeAction) {
+        this.commandeAction = commandeAction;
     }
 
     public void creerPlat(String categorie, String type, String description, Double prix) {
@@ -76,33 +75,47 @@ public class MenuController {
         plat.setType(type);
         plat.setDescription(description);
         plat.setPrix(prix);
+        System.out.println(prix);
     }
 
     public void ajoutMenuCommande() {
-        commande.ajoutMenuCommande(table, plat);
+        commandeAction.ajoutMenuCommande(table, plat);
 
     }
 
     public String afficheCommande(String table) {
         menu = "Commande:\n" +
-                "Plat: " + plat.getPreparation() + "\n";
-                /*"Description: " + plat.getDescription()+ "\n" +
-                " Prix: " + plat.getPrix() + "\n";
-*/
+                "Plat: " + plat.getPreparation() + "\n" +
+                // "Description: " + plat.getDescription()+ "\n" +
+                " Prix: " + plat.getAddition() + "\n";
+
         return menu;//plat.getPreparation() + plat.getPrix().toString();
     }
 
     public String prixTotalCommandeTable(String table) {
-        prixTotal = "Prix total: " + commande.prixTotalCommande(table);
+        prixTotal = "Prix total: " + commandeAction.prixTotalCommande(table);
 
         return prixTotal;
     }
 
     public String afficheCommandeTable(String table) {
-        menuCommandeTotal = commande.afficheCommandeTable(table);
+        menuCommandeTotal = commandeAction.afficheCommandeTable(table);
+        CommandeDAO.insertData(new Commande(table, menuCommandeTotal, commandeAction.prixTotalCommande(getTable())));
         return menuCommandeTotal;
     }
 
+    public ArrayList<Commande> insertDataJtable() {
+        CommandeDAO commandeDAO = new CommandeDAO();
+
+        List<Object> allCommandes = commandeDAO.getAllCommand();
+        ArrayList<Commande> commandeArrayList = new ArrayList<>();
+
+        for (Object commandes : allCommandes){
+            commandeArrayList.add((Commande) commandes);
+        }
+
+        return commandeArrayList;
+    }
 
 }
 

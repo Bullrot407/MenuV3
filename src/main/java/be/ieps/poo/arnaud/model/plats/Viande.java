@@ -14,7 +14,7 @@ public class Viande implements Plat {
     }
 
     public String getPreparation() {
-        return getType() + " " + getDescription();
+        return getType() + " " + getDescription() + " " + getPrix() +"\n";
     }
 
     @Override
@@ -45,5 +45,8 @@ public class Viande implements Plat {
     @Override
     public void setType(String type) {
         this.type = type;
+    }
+    public Double getAddition() {
+        return null;
     }
 }

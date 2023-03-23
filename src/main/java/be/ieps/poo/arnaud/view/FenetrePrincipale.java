@@ -3,13 +3,14 @@ package be.ieps.poo.arnaud.view;
 import be.ieps.poo.arnaud.controller.MenuController;
 
 import java.awt.Dimension;
+import java.sql.SQLException;
 
 import javax.swing.*;
 
 public class FenetrePrincipale extends JFrame {
     private Home home;
 
-    public FenetrePrincipale() {
+    public FenetrePrincipale(){
         home = Home.getInstance();
 
         setTitle("Restaurant");

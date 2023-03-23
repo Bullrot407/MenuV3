@@ -104,6 +104,7 @@ import java.util.List;
 
 public class XMLLoader implements Loader {
 
+    // permet de charger tout les types de fichier
     @Override
     public Carte load(File file) throws LoadingException {
         try {

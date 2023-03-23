@@ -1,24 +1,27 @@
 package be.ieps.poo.arnaud.view;
 
-import java.awt.*;
+import be.ieps.poo.arnaud.model.Commande;
+
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 
 import javax.swing.*;
 
 public class MenuBarre {
     private Home homePanel;
-    private Commande commandePanel;
+    private TableauCommandes commandePanel;
     private Statistique statistiquePanel;
+    private ArrayList<Commande> listeCommande;
     private JFrame frame;
     private JMenuBar menuBar;
 
-    public MenuBarre(JFrame frame) {
+    public MenuBarre(JFrame frame){
 
         this.frame = frame;
         menuBar = new JMenuBar();
         homePanel = Home.getInstance();
-        commandePanel = new Commande();
+        commandePanel = new TableauCommandes(listeCommande);
         statistiquePanel = new Statistique();
 
         JMenuItem homeItem = new JMenuItem("Acceuil");

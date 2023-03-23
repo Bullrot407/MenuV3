@@ -5,7 +5,7 @@ import be.ieps.poo.arnaud.model.plats.Plat;
 
 public class Cafe extends PlatDecorator {
 
-    private Double prix =4.00;
+    private Double prix = 4.00;
     private String type = "Café";
     private String description = "latte";
 
@@ -14,7 +14,7 @@ public class Cafe extends PlatDecorator {
     }
 
     public String getPreparation() {
-        return platDecore.getPreparation() + " " + this.getType() + " " + this.getDescription();
+        return platDecore.getPreparation() + " " + this.getType() + " " + this.getDescription() + " " + getPrix() + "\n";
     }
 
     @Override
@@ -34,7 +34,7 @@ public class Cafe extends PlatDecorator {
 
     @Override
     public Double getPrix() {
-        return platDecore.getPrix() + this.prix;
+        return this.prix;
     }
 
     @Override
@@ -46,5 +46,8 @@ public class Cafe extends PlatDecorator {
     public void setType(String type) {
         this.type = type;
     }
-}
 
+    public Double getAddition() {
+        return platDecore.getAddition() + this.prix;
+    }
+}

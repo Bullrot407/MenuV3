@@ -1,16 +1,16 @@
-package be.ieps.poo.arnaud.model.carte;
+package be.ieps.poo.arnaud.controller;
 
 import be.ieps.poo.arnaud.model.plats.Plat;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-public class Commande {
+public class CommandeAction {
 
     String menuCommandeTotal= "", menuCommande ="";
     private Map<String, ArrayList<Plat>> listeCommande = new HashMap<>();
 
-    public Commande() {
+    public CommandeAction() {
     }
 
     public void ajoutMenuCommande(String table, Plat plat) {
@@ -43,7 +43,7 @@ public class Commande {
 
         double prixTotal = 0;
         for (Plat plat : listeCommande.get(table)) {
-            prixTotal += plat.getPrix();
+            prixTotal += plat.getAddition();
         }
 
         return prixTotal;
@@ -56,7 +56,7 @@ public class Commande {
              /*listeCommande.get(table).size()*/;
             menuCommande = "Menu " + (index + 1) + ":\n" +
                     plat.getPreparation() + "\n" +
-                    plat.getPrix() + "\n";
+                    plat.getAddition() + "\n";
             index ++;
             menuCommandeTotal += menuCommande;
         }

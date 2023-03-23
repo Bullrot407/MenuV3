@@ -1,0 +1,15 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="StartMenu" type="Application" factoryName="Application" nameIsGenerated="true">
+    <option name="MAIN_CLASS_NAME" value="be.ieps.poo.arnaud.StartMenu" />
+    <module name="MenuV3 - vers V4" />
+    <extension name="coverage">
+      <pattern>
+        <option name="PATTERN" value="be.ieps.poo.arnaud.*" />
+        <option name="ENABLED" value="true" />
+      </pattern>
+    </extension>
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>
