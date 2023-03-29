@@ -8,8 +8,12 @@ import be.ieps.poo.arnaud.dao.CommandeDAO;
 import be.ieps.poo.arnaud.model.factory.PlatFactory;
 import be.ieps.poo.arnaud.model.plats.Plat;
 import be.ieps.poo.arnaud.view.FenetrePrincipale;
+import be.ieps.poo.arnaud.view.tableauCommande.TableModele;
 
-import java.util.ArrayList;
+import java.awt.*;
+import java.beans.PropertyChangeEvent;
+import java.beans.PropertyChangeListener;
+import java.beans.PropertyChangeSupport;
 import java.util.List;
 
 
@@ -19,6 +23,8 @@ public class MenuController {
     private CommandeAction commandeAction = new CommandeAction();
     private Plat plat;
     private String prixTotal, menuCommandeTotal, menu, table;
+
+    private CommandeDAO commandeDAO = CommandeDAO.getInstance();
 
     public void setTable(String table) {
         this.table = table;
@@ -37,7 +43,7 @@ public class MenuController {
         return menuController;
     }
 
-    public MenuController() {
+    private MenuController() {
         try {
             this.carte = xmlLoader.loadResource("carte.xml");
 
@@ -100,23 +106,47 @@ public class MenuController {
 
     public String afficheCommandeTable(String table) {
         menuCommandeTotal = commandeAction.afficheCommandeTable(table);
-        CommandeDAO.insertData(new Commande(table, menuCommandeTotal, commandeAction.prixTotalCommande(getTable())));
+        commandeDAO.insertData(new Commande(table, menuCommandeTotal, commandeAction.prixTotalCommande(getTable())));
         return menuCommandeTotal;
     }
 
-    public ArrayList<Commande> insertDataJtable() {
-        CommandeDAO commandeDAO = new CommandeDAO();
+    public List<Commande> getCommandeJour() {
 
-        List<Object> allCommandes = commandeDAO.getAllCommand();
-        ArrayList<Commande> commandeArrayList = new ArrayList<>();
-
-        for (Object commandes : allCommandes){
-            commandeArrayList.add((Commande) commandes);
-        }
-
-        return commandeArrayList;
+        return commandeDAO.getCommandJour();
     }
 
+    public List<Commande> getCommandeAll() {
+
+        return commandeDAO.getCommandAll();
+    }
+
+    public List<Commande> getCommandeById(int id) {
+        return commandeDAO.getCommandById(id);
+    }
+
+    public List<Commande> getPrixJour() {
+
+        return commandeDAO.getPrixJour();
+    }
+
+    public List<Commande> getPrixMois() {
+
+        return commandeDAO.getPrixMois();
+    }
+
+    public List<Commande> getCommandesJour() {
+
+        return commandeDAO.getCommandesJour();
+    }
+
+    public List<Commande> getCommandesMois() {
+
+        return commandeDAO.getCommandesMois();
+    }
+
+    public Commande updateById(int id, boolean statut) {
+        return commandeDAO.updateStatutById(id, statut);
+    }
 }
 
 

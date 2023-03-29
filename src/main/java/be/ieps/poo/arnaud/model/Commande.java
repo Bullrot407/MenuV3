@@ -3,12 +3,11 @@ package be.ieps.poo.arnaud.model;
 import java.util.Date;
 
 public class Commande {
-    private int idCommande;
-    private String table;
-    private String menu;
+    private int idCommande,nbCommande;
+    private String table,menu,dateHeure;
     private Double prix;
     private Date date;
-    private String dateHeure;
+
     private boolean statut;
 
     public Commande() {
@@ -28,14 +27,33 @@ public class Commande {
         this.date = date;
         this.statut = statut;
     }
-
-    public Commande(int idCommande, String table, String menu, Double prix, String dateHeure, boolean statut) {
-        this.idCommande = idCommande;
+    public Commande(int id, String table, Double prix, Date date, boolean statut) {
+        this.idCommande = id;
         this.table = table;
-        this.menu = menu;
+        this.prix = prix;
+        this.date = date;
+        this.statut = statut;
+    }
+    public Commande(Double prix, String dateHeure) {
         this.prix = prix;
         this.dateHeure = dateHeure;
-        this.statut = statut;
+    }
+
+    public Commande(int nbCommande, String dateHeure) {
+        this.nbCommande = nbCommande;
+        this.dateHeure = dateHeure;
+    }
+
+    public void setIdCommande(int idCommande) {
+        this.idCommande = idCommande;
+    }
+
+    public int getNbCommande() {
+        return nbCommande;
+    }
+
+    public void setNbCommande(int nbCommande) {
+        this.nbCommande = nbCommande;
     }
 
     public String getDateHeure() {

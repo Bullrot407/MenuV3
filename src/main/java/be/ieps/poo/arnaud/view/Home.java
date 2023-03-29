@@ -1,8 +1,7 @@
 package be.ieps.poo.arnaud.view;
 
 import be.ieps.poo.arnaud.controller.MenuController;
-import be.ieps.poo.arnaud.view.CommandeModal;
-import be.ieps.poo.arnaud.view.TableDialog;
+import be.ieps.poo.arnaud.view.tableauCommande.CommandeModal;
 
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;

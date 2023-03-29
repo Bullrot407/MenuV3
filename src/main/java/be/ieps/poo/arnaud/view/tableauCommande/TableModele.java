@@ -1,13 +1,17 @@
-package be.ieps.poo.arnaud.view;
+package be.ieps.poo.arnaud.view.tableauCommande;
 
 import be.ieps.poo.arnaud.model.Commande;
 
 import javax.swing.table.AbstractTableModel;
+import java.text.SimpleDateFormat;
 import java.util.List;
+
 
 public class TableModele extends AbstractTableModel {
     private final List<Commande> liste;
-    private final String[] colonneNoms = {"Commande", "Numéro de Table", "Menu", "Prix", "Date", "Facturée"};
+    private final String[] colonneNoms = {"Commande", "Numéro de Table", "Prix", "Date", "Facturée"};
+
+
 
     public TableModele(List<Commande> liste) {
         this.liste = liste;
@@ -21,7 +25,7 @@ public class TableModele extends AbstractTableModel {
             case 2 -> result = colonneNoms[2];
             case 3 -> result = colonneNoms[3];
             case 4 -> result = colonneNoms[4];
-            case 5 -> result = colonneNoms[5];
+
             default -> result = "";
         }
         ;
@@ -44,17 +48,24 @@ public class TableModele extends AbstractTableModel {
 
     @Override
     public Object getValueAt(int rowIndex, int columnIndex) {
-        Commande ligne = (Commande) liste.get(rowIndex);
+        Commande ligne = liste.get(rowIndex);
+        SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy HH:mm");
         Object result;
         switch (columnIndex) {
             case 0 -> result = ligne.getIdCommande();
             case 1 -> result = ligne.getTable();
-            case 2 -> result = ligne.getMenu();
-            case 3 -> result = ligne.getPrix();
-            case 4 -> result = ligne.getDateHeure();
-            case 5 -> result = ligne.isStatut();
+            case 2 -> result = ligne.getPrix() + "€";
+            case 3 -> result = formatter.format(ligne.getDate());
+            case 4 -> {
+                if (ligne.isStatut() == true) {
+                    result = "Payé";
+                } else {
+                    result = "Non payé";
+                }
+            }
             default -> result = null;
         }
         return result;
     }
+
 }

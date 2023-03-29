@@ -1,5 +1,5 @@
 
-package be.ieps.poo.arnaud.view;
+package be.ieps.poo.arnaud.view.tableauCommande;
 
 import be.ieps.poo.arnaud.controller.MenuController;
 import be.ieps.poo.arnaud.model.carte.Carte;
@@ -53,7 +53,7 @@ public class CommandeModal extends JDialog {
         console.setBackground(Color.black);
         console.setForeground(Color.green);
         console.setFont(new Font("Arial", Font.BOLD, 14));
-        console.setEditable(true);
+        console.setEditable(false);
         console.setLineWrap(true);
         console.setWrapStyleWord(true);
 
@@ -71,55 +71,10 @@ public class CommandeModal extends JDialog {
         this.setResizable(false);
         this.setVisible(true);
     }
-    /*public CommandeModal() {
-
-        // Création de l'onglet
-        tabbedPane = new JTabbedPane();
-        console = new JTextArea();
-        JScrollPane scrollPane = new JScrollPane(console);
-
-        // Ajout des panneaux à l'onglet
-
-        cartePlats = new PlatVue(this);
-        tabbedPane.addTab("Carte plats", cartePlats);
-
-        carteAccompagnements = new AccompagnementVue(this);
-        tabbedPane.addTab("Carte accompagnements", carteAccompagnements);
-
-        carteDesserts = new DessertVue(this);
-        tabbedPane.addTab("Carte desserts", carteDesserts);
-
-        //creation du panel
-
-        this.setLayout(new BorderLayout());
-
-        tabbedPane.setPreferredSize((new Dimension(900, 300)));
-        console.setPreferredSize((new Dimension(900, 250)));
-        scrollPane.setPreferredSize(new Dimension(900,250));
-        scrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
-        // Affichage de la fenêtre modale
-        this.setTitle(menuController.getTable());
-        this.setModal(true);
-        this.setSize(900, 600);
-        this.setLocationRelativeTo(null);
-        this.add(tabbedPane, BorderLayout.NORTH);
-
-        this.add(scrollPane, BorderLayout.SOUTH);
-        this.setResizable(false);
-        console.setEditable(true);
-        console.setLineWrap(true);
-        console.setWrapStyleWord(true);
-        console.setBackground(Color.black);
-        console.setForeground(Color.green);
-        console.setFont(new Font("Arial", Font.BOLD, 14));
-
-        this.setVisible(true);
-    }*/
 
     public void afficheCommande(String table) {
         console.append(menuController.afficheCommande(table));
     }
-
     public void effaceConsole() {
         console.setText("");
     }

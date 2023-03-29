@@ -2,23 +2,19 @@ package be.ieps.poo.arnaud.view.carte;
 
 import be.ieps.poo.arnaud.controller.MenuController;
 import be.ieps.poo.arnaud.model.carte.Choix;
-import be.ieps.poo.arnaud.view.CommandeModal;
+import be.ieps.poo.arnaud.view.tableauCommande.CommandeModal;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.*;
-import java.util.List;
-import java.util.function.Function;
 
 
 public class AccompagnementVue extends JPanel {
-    private CommandeModal commandeModal;
     private MenuController menuController;
 
     public AccompagnementVue(CommandeModal commandeModal) {
-        this.commandeModal = commandeModal;
         this.menuController = menuController.getInstance();
 
         setLayout(new BoxLayout(this, BoxLayout.Y_AXIS)); // Utiliser un BoxLayout avec orientation verticale pour le conteneur principal

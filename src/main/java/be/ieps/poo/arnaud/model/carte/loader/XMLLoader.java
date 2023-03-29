@@ -113,8 +113,6 @@ public class XMLLoader implements Loader {
             throw new LoadingException(e);
         }
     }
-
-
     @Override
     public Carte loadResource(String resourceName) throws LoadingException {
         try {

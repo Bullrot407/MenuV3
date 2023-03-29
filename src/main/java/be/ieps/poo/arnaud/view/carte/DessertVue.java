@@ -2,7 +2,7 @@ package be.ieps.poo.arnaud.view.carte;
 
 import be.ieps.poo.arnaud.controller.MenuController;
 import be.ieps.poo.arnaud.model.carte.Choix;
-import be.ieps.poo.arnaud.view.CommandeModal;
+import be.ieps.poo.arnaud.view.tableauCommande.CommandeModal;
 
 import javax.swing.*;
 import java.awt.*;
@@ -12,11 +12,9 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class DessertVue extends JPanel {
-    private CommandeModal commandeModal;
     private MenuController menuController;
 
     public DessertVue(CommandeModal commandeModal) {
-        this.commandeModal = commandeModal;
         this.menuController = MenuController.getInstance();
 
         setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));

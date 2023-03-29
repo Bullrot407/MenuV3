@@ -1,7 +1,7 @@
 <component name="ProjectRunConfigurationManager">
   <configuration default="false" name="StartMenu" type="Application" factoryName="Application" nameIsGenerated="true">
     <option name="MAIN_CLASS_NAME" value="be.ieps.poo.arnaud.StartMenu" />
-    <module name="MenuV3 - vers V4" />
+    <module name="menu" />
     <extension name="coverage">
       <pattern>
         <option name="PATTERN" value="be.ieps.poo.arnaud.*" />
